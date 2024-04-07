@@ -2,7 +2,7 @@
 
 Submitted by: **Noah Kim**
 
-This web app: **A web app where you can create pokemons!**
+This web app: **A web app where you can create Pokemons!**
 
 Time spent: **11** hours spent in total
 
@@ -27,8 +27,20 @@ The following **additional** features are implemented:
 Here's a walkthrough of implemented user stories:
 
 <!-- Replace this with whatever GIF tool you used! -->
+### Create
+![pokemon-create](https://github.com/boatnoah/pokemon-team/assets/112355104/59f9a2e2-0f02-4967-a9c3-97fc12fe11e4)
 
-GIF created with ...
+### Read / Update
+![pokemon-edit](https://github.com/boatnoah/pokemon-team/assets/112355104/3333e920-4f3d-4f77-903f-6a1921c92db1)
+![pokemon-detailview](https://github.com/boatnoah/pokemon-team/assets/112355104/cafd7149-cd7e-4208-8c9a-6de8c2591e2d)
+
+### Delete
+![pokemon-delete](https://github.com/boatnoah/pokemon-team/assets/112355104/8e07dd00-04b1-4c5e-a417-20e47d7c978b)
+
+
+
+
+GIF created with LICEcap
 
 <!-- Recommended tools:
 [Kap](https://getkap.co/) for macOS
@@ -38,6 +50,8 @@ GIF created with ...
 ## Notes
 
 Describe any challenges encountered while building the app.
+
+In developing my React application, I faced challenges such as setting up React Router for routing, styling components for layout, and implementing input validation. Despite these hurdles, I overcame them with the help of documentation, online resources, and community support. These challenges ultimately helped me improve my technical skills and problem-solving abilities.
 
 ## License
 
