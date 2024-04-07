@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom"; // Import the useParams hook
 import { supabase } from "@/client";
 import { Progress } from "@/components/ui/progress";
-
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 import bugImage from "@/assets/pokemon-types/bug.png";
 import darkImage from "@/assets/pokemon-types/dark.png";
 import dragonImage from "@/assets/pokemon-types/dragon.png";
@@ -60,18 +61,23 @@ const PokemonDetails = () => {
     fetchPokemon();
   }, [id]); // Re-run the effect when the id changes
 
-  if (pokemon && pokemon.type) {
-    console.log(typeToImageMap[pokemon.type]);
-  }
   return (
     <div className="flex justify-center items-center">
       {pokemon ? (
-        <div>
+        <div className="flex flex-col items-center gap-5">
+          <h1 className="font-bold text-xl">{pokemon.name.toUpperCase()}</h1>
           <img src={typeToImageMap[pokemon.type]} />
-          <h2>
-            {pokemon.name}, a {pokemon.type} type Pokémon, has {pokemon.hp} HP.
+          <p className="font-bold text-lg">Type: {pokemon.type}</p>
+          <p className="font-bold text-lg">HP: {pokemon.hp}</p>
+          <h2 className="font-bold text-lg">
+            {pokemon.hp > 100
+              ? "WOW! This pokemon is strong!"
+              : "Ehh.. this one seems fragile."}
           </h2>
-          {/* Display other details of the Pokemon */}
+
+          <Link to={`/edit/${pokemon.id}`}>
+            <Button>Edit {pokemon.name}</Button>
+          </Link>
         </div>
       ) : (
         <Progress className="align-middle h-[10px] w-[100px]" value={100} />

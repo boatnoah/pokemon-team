@@ -56,33 +56,40 @@ const Gallery = () => {
   }, []); // Empty dependency array to run the effect only once on component mount
 
   return (
-    <div className="flex justify-center items-center gap-20">
-      {pokemons && pokemons.length > 0 ? (
-        pokemons.map((pokemon) => (
-          <Link key={pokemon.id} to={`/pokemon/${pokemon.id}`}>
-            {/* Wrap the Card component with the Link */}
-            <Card id={pokemon.id}>
-              <CardHeader>
-                <CardTitle>{pokemon.name}</CardTitle>
-                <img src={typeToImageMap[pokemon.type]} />
-              </CardHeader>
-              <CardContent>
-                <Badge>{pokemon.type}</Badge>
-                <h2 className="font-bold">HP: {pokemon.hp}</h2>
-              </CardContent>
-              <CardFooter className="flex justify-center">
-                <Button>Edit</Button>
-              </CardFooter>
-            </Card>
-          </Link>
-        ))
-      ) : (
-        <Progress
-          className="align-middle h-[10px] w-[100px]"
-          value={progress}
-        />
-      )}
-    </div>
+    <>
+      <h1 className="font-bold text-xl text-center my-10">Pokemon's</h1>
+      <div className="flex justify-center items-center gap-20">
+        {pokemons && pokemons.length > 0 ? (
+          pokemons.map((pokemon) => (
+            <div key={pokemon.id}>
+              <Card id={pokemon.id}>
+                <Link to={`/pokemon/${pokemon.id}`}>
+                  <CardHeader>
+                    <CardTitle>{pokemon.name}</CardTitle>
+                    <img src={typeToImageMap[pokemon.type]} />
+                  </CardHeader>
+                  <CardContent>
+                    <Badge>{pokemon.type}</Badge>
+                    <h2 className="font-bold">HP: {pokemon.hp}</h2>
+                  </CardContent>
+                </Link>
+
+                <CardFooter className="flex justify-center">
+                  <Link to={`/edit/${pokemon.id}`}>
+                    <Button>Edit</Button>
+                  </Link>
+                </CardFooter>
+              </Card>
+            </div>
+          ))
+        ) : (
+          <Progress
+            className="align-middle h-[10px] w-[100px]"
+            value={progress}
+          />
+        )}
+      </div>
+    </>
   );
 };
 

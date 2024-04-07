@@ -44,6 +44,9 @@ const CreatePokemon = () => {
 
   return (
     <div className="flex flex-col justify-center items-center h-full">
+      <h1 className="text-xl font-bold text-center my-10">
+        Create your Pokemon!
+      </h1>
       <div className="flex flex-col text-center w-[500px] gap-20">
         <Card>
           <CardHeader>

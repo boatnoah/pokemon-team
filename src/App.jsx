@@ -1,18 +1,15 @@
 const App = () => {
   return (
-    <>
-      <div className="text-center">
+    <div className="flex justify-center items-center min-h-screen">
+      <div className="flex flex-col items-center mr-80">
         <h1 className="font-bold text-4xl">Create your own Pokemon!</h1>
         <h3>Here is where you can create your very own set of Pokemon!</h3>
-
-        <div className="flex justify-center">
-          <img
-            src="./src/assets/pikachu.jpeg"
-            className="w-[700px] h-[700px]"
-          />
-        </div>
       </div>
-    </>
+      <img
+        src="./src/assets/nobgpickachu.png"
+        className="w-[700px] h-[700px]"
+      />
+    </div>
   );
 };
 
