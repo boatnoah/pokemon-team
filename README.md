@@ -20,7 +20,7 @@ The following **required** functionality is completed:
 The following **additional** features are implemented:
 
 - [x] Dynamic images for each card.
-- [x] Utlized Shadcn UI library
+- [x] Utilized Shadcn UI library
 
 ## Video Walkthrough
 
